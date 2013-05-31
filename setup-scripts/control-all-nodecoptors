@@ -1,0 +1,8 @@
+#!/bin/bash
+# This script has never been executed. I have no idea if it will work.
+:start
+nid = airport -s |cut -c 1-32|grep -E '^\W*[0-9]+'|grep -oE '[0-9]+'|head -n 1
+while [!"$nid" == ""]; do
+    ./change-ar-drone $nid
+    nid = airport -s |cut -c 1-32|grep -E '^\W*[0-9]+'|grep -oE '[0-9]+'|head -n 1
+fi

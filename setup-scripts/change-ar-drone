@@ -1,0 +1,19 @@
+#!/usr/bin/expect
+
+set timeout 20
+set did [lindex $argv 0]
+set networkName SkyNet
+set wifiChannel 3
+
+puts "configuring copter number $did"
+
+spawn networksetup -setairportnetwork en0 $did
+sleep 10
+spawn telnet 192.168.1.1
+
+expect "#"
+sleep 5 
+send "killall udhcpd; iwconfig ath0 mode ad-hoc essid $networkName channel $wifiChannel; sleep 5; ifconfig ath0 192.168.1.$did netmask 255.255.255.0 up;\n" 
+
+#spawn networksetup -setairportnetowrk en0 $networkName
+#sleep 10
