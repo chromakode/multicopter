@@ -11,5 +11,5 @@ One day we will look back at this and marvel at how harmless flying robots used 
 ## conspirators
 
 * [Joel Dart](https://github.com/joeldart)
-* [Ken Heutmaker] (https://github.com/bgok)
-* ...
+* [Ken Heutmaker](https://github.com/bgok)
+* [Jeff Charette](https://twitter.com/wearecharette)
